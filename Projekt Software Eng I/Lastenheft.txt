@@ -1,0 +1,14 @@
+﻿Lastenheft
+
+
+* FALLS es noch freie Plätze im Parkhaus gibt, MUSS das PHS (PARKHAUSSYSTEM) dem AUTO die Möglichkeit bieten, die Schranke zu öffnen
+* Das PHS MUSS die Anzahl der freien Parkplätze kennen
+* Das PHS SOLLTE FÄHIG SEIN, das AUTO in freie Parkplätze einzuweisen
+* Das PHS MUSS die Parkdauer aller AUTOs verwalten können
+* Das PHS MUSS dem AUTO die Möglichkeit bieten, PARKGEBÜHREN zu bezahlen
+* FALLS das Auto bezahlt hat, MUSS das PHS dem AUTO die Möglichkeit bieten, die Schranke zu öffnen
+* FALLS ein NOTFALL eintritt, MUSS das PHS dem AUTO die Möglichkeit bieten, die Schranke zu öffnen
+* Das PHS MUSS Betriebsabläufe / Öffnungszeiten / Regeln / Preise festlegen
+* Das PHS MUSS den Kassenstand kennen
+* Das PHS MUSS die Einnahmen pro Tag / pro Woche / pro Monat / pro Jahr kennen
+* Das PHS SOLLTE die DATEN in eine Kurve eintragen können
