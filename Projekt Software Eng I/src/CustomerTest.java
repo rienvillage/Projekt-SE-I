@@ -4,44 +4,46 @@ import org.junit.Test;
 
 public class CustomerTest {
 
+	Customer c = null; //not implemented yet...
+	
 	@Test
 	public void testGetName() {
-		fail("Not yet implemented");
+		assertNotNull(c.getName());
 	}
 
 	@Test
 	public void testSetName() {
-		fail("Not yet implemented");
+		assertFalse(c.setName(null));
 	}
 
 	@Test
 	public void testGetPassword() {
-		fail("Not yet implemented");
+		assertNotNull(c.getPassword());
 	}
 
 	@Test
 	public void testSetPassword() {
-		fail("Not yet implemented");
+		assertFalse(c.setPassword(null));
 	}
 
 	@Test
 	public void testGetReservedParkingSlot() {
-		fail("Not yet implemented");
+		assertNotNull(c.getReservedParkingSlot());
 	}
 
 	@Test
 	public void testSetReservedParkingSlot() {
-		fail("Not yet implemented");
+		assertFalse(c.setReservedParkingSlot(null));
 	}
 
 	@Test
 	public void testGetVehicleType() {
-		fail("Not yet implemented");
+		assertNotNull(c.getVehicleType());
 	}
 
 	@Test
 	public void testSetVehicleType() {
-		fail("Not yet implemented");
+		assertFalse(c.setVehicleType(null));
 	}
 
 }
