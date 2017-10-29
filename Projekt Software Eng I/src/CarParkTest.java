@@ -3,15 +3,16 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 public class CarParkTest {
+	CarPark cp = null;
 
 	@Test
-	public void testGetParkingSlots() {
-		fail("Not yet implemented");
+	public void getFreeParkingSlots_SimpleCall_NotNull() {
+		assertNotNull(cp.getFreeParkingSlots());
 	}
-
+	
 	@Test
-	public void testSetParkingSlots() {
-		fail("Not yet implemented");
+	public void setParkingSlots_SimpleCall_NotNegative() {
+		assertNotNull(cp.setParkingSlots(null));
 	}
 
 	@Test
