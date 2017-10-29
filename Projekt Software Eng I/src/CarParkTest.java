@@ -3,7 +3,9 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 public class CarParkTest {
+	
 	CarPark cp = null;
+	ParkingSlot[] ps1 = null;
 
 	@Test
 	public void getFreeParkingSlots_SimpleCall_NotNull() {
@@ -11,13 +13,18 @@ public class CarParkTest {
 	}
 	
 	@Test
-	public void setParkingSlots_SimpleCall_NotNegative() {
-		assertNotNull(cp.setParkingSlots(null));
+	public void getOccupiedParkingSlots_SimpleCall_NotNull() {
+		assertNotNull(cp.getOccupiedParkingSlots());
 	}
 
 	@Test
-	public void testGetSize() {
-		fail("Not yet implemented");
+	public void getParkingSlots_SimpleCall_NotNull() {
+		assertNotNull(cp.getParkingSlots());
 	}
 
+	@Test
+	public void setParkingSlots_SimpleCall_AssertTrue() {
+		assertTrue(cp.setParkingSlots(ps1));
+	}
+	
 }
