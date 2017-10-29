@@ -2,20 +2,21 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-public class UnregisteredCostumerTest {
-
+public class UnregisteredCustomerTest {
+	UnregisteredCustomer uc = null; //Not implemented yet
+	
 	@Test
-	public void testIsCurrentlyParking() {
-		fail("Not yet implemented");
+	public void isCurrentlyParking_SimpleCall_NotNull() {
+		assertNotNull(uc.isCurrentlyParking());
 	}
 
 	@Test
-	public void testSetCurrentlyParking() {
-		fail("Not yet implemented");
+	public void setCurrentlyParking_AnyValue_SuccessTrue() {
+		assertTrue(uc.setCurrentlyParking(false));
 	}
 
 	@Test
-	public void testHasPaid() {
+	public void hasPaid() {
 		fail("Not yet implemented");
 	}
 

@@ -1,5 +1,4 @@
 import static org.junit.Assert.*;
-import static org.junit.Assume.assumeNoException;
 
 import org.junit.Test;
 
@@ -17,28 +16,28 @@ public class ParkingSlotTest {
 	}
 	
 	@Test
-	public void setId_negativeInput_NoException() {
-		
+	public void setId_negativeInput_SuccessFalse() {
+		assertFalse(ps.setId(-1));
 	}
 
 	@Test
-	public void testGetSlotType() {
-		fail("Not yet implemented");
+	public void getSlotType_SimpleCall_NotNull() {
+		assertNotNull(ps.getSlotType());
 	}
 
 	@Test
-	public void testSetSlotType() {
-		fail("Not yet implemented");
+	public void setSlotType_NullInput_SuccessFalse() {
+		assertFalse(ps.setSlotType(null));
 	}
 
 	@Test
-	public void testGetCostumer() {
-		fail("Not yet implemented");
+	public void getCostumer_SimpleCall_NotNull() {
+		assertNotNull(ps.getCostumer());
 	}
 
 	@Test
-	public void testSetCostumer() {
-		fail("Not yet implemented");
+	public void setCostumer_NullInput_SuccessFalse() {
+		assertNotNull(ps.setCostumer(null));
 	}
 
 }
