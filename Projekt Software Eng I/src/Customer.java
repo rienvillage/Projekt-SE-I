@@ -1,5 +1,5 @@
 
-public interface Costumer extends UnregisteredCostumer {
+public interface Customer extends UnregisteredCustomer {
 	/**
 	 * 
 	 * @return

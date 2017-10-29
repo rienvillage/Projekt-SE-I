@@ -1,5 +1,4 @@
 import static org.junit.Assert.*;
-import static org.junit.Assume.assumeNoException;
 
 import org.junit.Test;
 

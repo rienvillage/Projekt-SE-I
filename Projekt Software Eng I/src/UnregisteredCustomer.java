@@ -1,4 +1,4 @@
-public interface UnregisteredCostumer {
+public interface UnregisteredCustomer {
 	
 	/**
 	 * 
