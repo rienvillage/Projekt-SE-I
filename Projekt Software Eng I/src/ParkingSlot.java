@@ -8,7 +8,7 @@ public interface ParkingSlot {
 	 * 
 	 * @return previously assigned Id
 	 */
-	public int setId();
+	public int setId(int i1);
 	/**
 	 * 
 	 * @return
@@ -18,8 +18,15 @@ public interface ParkingSlot {
 	 * 
 	 * @return
 	 */
-	public SlotType setSlotType();
-	
+	public SlotType setSlotType(SlotType st1);
+	/**
+	 * 
+	 * @return
+	 */
 	public UnregisteredCostumer getCostumer();
-	public UnregisteredCostumer setCostumer();
+	/**
+	 * 
+	 * @return
+	 */
+	public UnregisteredCostumer setCostumer(UnregisteredCostumer us1);
 }

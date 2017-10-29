@@ -7,7 +7,7 @@ public interface CarPark {
 	/**
 	 * 
 	 */
-	public void setParkingSlots();
+	public void setParkingSlots(ParkingSlot[] ps1);
 	/**
 	 * 
 	 * @return

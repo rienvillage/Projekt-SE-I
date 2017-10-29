@@ -9,7 +9,7 @@ public interface Costumer extends UnregisteredCostumer {
 	 * 
 	 * 
 	 */
-	public void setName();
+	public void setName(String s1);
 	/**
 	 * 
 	 * @return
@@ -19,7 +19,7 @@ public interface Costumer extends UnregisteredCostumer {
 	 * 
 	 * 
 	 */
-	public void setPassword();
+	public void setPassword(String s1);
 	
 	/**
 	 * 
@@ -30,7 +30,7 @@ public interface Costumer extends UnregisteredCostumer {
 	 * 
 	 * @return previously reserved Parking Slot (old value)
 	 */
-	public ParkingSlot setReservedParkingSlot();
+	public ParkingSlot setReservedParkingSlot(ParkingSlot ps1);
 	/**
 	 * 
 	 * @return
@@ -40,5 +40,5 @@ public interface Costumer extends UnregisteredCostumer {
 	 * 
 	 * @return
 	 */
-	public VehicleType setVehicleType();
+	public VehicleType setVehicleType(VehicleType vt1);
 }

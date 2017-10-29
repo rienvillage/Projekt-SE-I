@@ -8,7 +8,7 @@ public interface UnregisteredCostumer {
 	/**
 	 * 
 	 */
-	public void setCurrentlyParking();
+	public void setCurrentlyParking(boolean b1);
 	/**
 	 * 
 	 * @return 
@@ -17,7 +17,7 @@ public interface UnregisteredCostumer {
 	/**
 	 * 
 	 */
-	public void setPaid();
+	public void setPaid(boolean b1);
 	/**
 	 * 
 	 * @return
@@ -26,7 +26,7 @@ public interface UnregisteredCostumer {
 	/**
 	 * 
 	 */
-	public void setArrivalTime();
+	public void setArrivalTime(int i1);
 	/**
 	 * 
 	 * @return
@@ -35,7 +35,7 @@ public interface UnregisteredCostumer {
 	/**
 	 * 
 	 */
-	public void setCurrentSlot();
+	public void setCurrentSlot(ParkingSlot ps1);
 	/**
 	 * 
 	 * @return
@@ -45,5 +45,5 @@ public interface UnregisteredCostumer {
 	 * 
 	 * @return previous Rate
 	 */
-	public Rate setRate();
+	public Rate setRate(Rate r1);
 }
