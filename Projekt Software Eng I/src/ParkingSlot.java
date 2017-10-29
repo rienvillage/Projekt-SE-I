@@ -6,9 +6,9 @@ public interface ParkingSlot {
 	public int getId();
 	/**
 	 * 
-	 * @return previously assigned Id
+	 * @return success
 	 */
-	public int setId(int i1);
+	public boolean setId(int i1);
 	/**
 	 * 
 	 * @return
@@ -16,9 +16,9 @@ public interface ParkingSlot {
 	public SlotType getSlotType();
 	/**
 	 * 
-	 * @return
+	 * @return success
 	 */
-	public SlotType setSlotType(SlotType st1);
+	public boolean setSlotType(SlotType st1);
 	/**
 	 * 
 	 * @return
@@ -26,7 +26,7 @@ public interface ParkingSlot {
 	public UnregisteredCostumer getCostumer();
 	/**
 	 * 
-	 * @return
+	 * @return success
 	 */
-	public UnregisteredCostumer setCostumer(UnregisteredCostumer us1);
+	public boolean setCostumer(UnregisteredCostumer us1);
 }

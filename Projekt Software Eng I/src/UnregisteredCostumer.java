@@ -7,8 +7,9 @@ public interface UnregisteredCostumer {
 	public boolean isCurrentlyParking();
 	/**
 	 * 
+	 * @return success
 	 */
-	public void setCurrentlyParking(boolean b1);
+	public boolean setCurrentlyParking(boolean b1);
 	/**
 	 * 
 	 * @return 
@@ -16,8 +17,9 @@ public interface UnregisteredCostumer {
 	public boolean hasPaid();
 	/**
 	 * 
+	 * @return success
 	 */
-	public void setPaid(boolean b1);
+	public boolean setPaid(boolean b1);
 	/**
 	 * 
 	 * @return
@@ -25,8 +27,9 @@ public interface UnregisteredCostumer {
 	public int getArrivalTime();
 	/**
 	 * 
+	 * @return success
 	 */
-	public void setArrivalTime(int i1);
+	public boolean setArrivalTime(int i1);
 	/**
 	 * 
 	 * @return
@@ -34,8 +37,9 @@ public interface UnregisteredCostumer {
 	public ParkingSlot getCurrentSlot();
 	/**
 	 * 
+	 * @return success
 	 */
-	public void setCurrentSlot(ParkingSlot ps1);
+	public boolean setCurrentSlot(ParkingSlot ps1);
 	/**
 	 * 
 	 * @return
@@ -43,7 +47,7 @@ public interface UnregisteredCostumer {
 	public Rate getRate();
 	/**
 	 * 
-	 * @return previous Rate
+	 * @return success
 	 */
-	public Rate setRate(Rate r1);
+	public boolean setRate(Rate r1);
 }

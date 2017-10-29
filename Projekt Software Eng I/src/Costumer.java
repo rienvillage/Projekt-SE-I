@@ -7,9 +7,9 @@ public interface Costumer extends UnregisteredCostumer {
 	public String getName();
 	/**
 	 * 
-	 * 
+	 * @return success
 	 */
-	public void setName(String s1);
+	public boolean setName(String s1);
 	/**
 	 * 
 	 * @return
@@ -17,9 +17,9 @@ public interface Costumer extends UnregisteredCostumer {
 	public String getPassword();
 	/**
 	 * 
-	 * 
+	 * @return success
 	 */
-	public void setPassword(String s1);
+	public boolean setPassword(String s1);
 	
 	/**
 	 * 
@@ -28,9 +28,9 @@ public interface Costumer extends UnregisteredCostumer {
 	public ParkingSlot getReservedParkingSlot();
 	/**
 	 * 
-	 * @return previously reserved Parking Slot (old value)
+	 * @return success
 	 */
-	public ParkingSlot setReservedParkingSlot(ParkingSlot ps1);
+	public boolean setReservedParkingSlot(ParkingSlot ps1);
 	/**
 	 * 
 	 * @return
@@ -38,7 +38,7 @@ public interface Costumer extends UnregisteredCostumer {
 	public VehicleType getVehicleType();
 	/**
 	 * 
-	 * @return
+	 * @return success
 	 */
-	public VehicleType setVehicleType(VehicleType vt1);
+	public boolean setVehicleType(VehicleType vt1);
 }
