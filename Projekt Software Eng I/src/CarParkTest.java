@@ -4,8 +4,8 @@ import org.junit.Test;
 
 public class CarParkTest {
 	
-	CarPark cp = null;
-	ParkingSlot[] ps1 = null;
+	CarPark cp = null; //Not implemented yet
+	ParkingSlot[] ps1 = null; //Not implemented yet
 
 	@Test
 	public void getFreeParkingSlots_SimpleCall_NotNull() {
@@ -23,8 +23,12 @@ public class CarParkTest {
 	}
 
 	@Test
-	public void setParkingSlots_SimpleCall_AssertTrue() {
+	public void setParkingSlots_SimpleCall_SuccessTrue() {
 		assertTrue(cp.setParkingSlots(ps1));
 	}
 	
+	@Test
+	public void setParkingSlots_SimpleCall_SuccessFalse() {
+		assertTrue(cp.setParkingSlots(null));
+	}
 }
