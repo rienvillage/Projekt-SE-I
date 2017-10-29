@@ -1,16 +1,17 @@
 public interface CarPark {
 	/**
 	 * 
-	 * @return
+	 * @return amount of free parking slots in car park
 	 */
-	public ParkingSlot[] getParkingSlots();
+	public ParkingSlot[] getFreeParkingSlots();
 	/**
 	 * 
+	 * @return amount of occupied parking slots in car park
 	 */
-	public void setParkingSlots(ParkingSlot[] ps1);
+	public ParkingSlot[] getOccupiedParkingSlots();
 	/**
 	 * 
-	 * @return
+	 * @return success
 	 */
-	public int getSize();
+	public boolean setParkingSlots(ParkingSlot[] ps1);
 }
