@@ -11,6 +11,11 @@ public interface CarPark {
 	public ParkingSlot[] getOccupiedParkingSlots();
 	/**
 	 * 
+	 * @return
+	 */
+	public ParkingSlot[] getParkingSlots();
+	/**
+	 * 
 	 * @return success
 	 */
 	public boolean setParkingSlots(ParkingSlot[] ps1);
