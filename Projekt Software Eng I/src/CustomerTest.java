@@ -28,16 +28,16 @@ public class CustomerTest {
 	
 	@Test
 	public void setArrivalTime_NegativeValue_SuccessFalse() {
-		assertFalse(uc.setArrivalTime(-1));
+
 	}
 
 	@Test
 	public void getCurrentSlot_SimpleCall_NotNull() {
-		assertNotNull(uc.getCurrentSlot());
+	
 	}
 
 	@Test
 	public void setCurrentSlot_NullValue_SuccessFalse() {
-		assertFalse(uc.setCurrentSlot(null));
+	
 	}
 }

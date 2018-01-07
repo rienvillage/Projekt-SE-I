@@ -1,3 +1,5 @@
+import com.thoughtworks.xstream.XStream;
+
 public interface Customer {
 	
 	/**
@@ -14,20 +16,23 @@ public interface Customer {
 	 * 
 	 * @return
 	 */
-	public int getArrivalTime();
+	public long getArrivalTime();
 	/**
 	 * 
 	 * @return success
 	 */
-	public boolean setArrivalTime(int i1);
+	public long setArrivalTime(long i1);
 	/**
 	 * 
 	 * @return
 	 */
-	public ParkingSlot getCurrentSlot();
+	public String saveState();
 	/**
 	 * 
-	 * @return success
+	 * @return
 	 */
-	public boolean setCurrentSlot(ParkingSlot ps1);
+	public static Customer loadState(String xml) {
+		XStream xstream = new XStream();
+		return (Customer) xstream.fromXML(xml);
+	}
 }

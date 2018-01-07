@@ -1,15 +1,11 @@
+import com.thoughtworks.xstream.XStream;
 
 public interface CarPark {
 	/**
 	 * 
-	 * @return amount of free parking slots in car park
+	 * @return free ParkignSlot with smallest id
 	 */
-	public ParkingSlot[] getFreeParkingSlots();
-	/**
-	 * 
-	 * @return amount of occupied parking slots in car park
-	 */
-	public ParkingSlot[] getOccupiedParkingSlots();
+	public ParkingSlot getFreeParkingSlot();
 	/**
 	 * 
 	 * @return
@@ -19,5 +15,18 @@ public interface CarPark {
 	 * 
 	 * @return success
 	 */
-	public boolean setParkingSlots(ParkingSlot[] ps1);
+	public ParkingSlot[] setParkingSlots(ParkingSlot[] ps1);
+	/**
+	 * 
+	 * @return
+	 */
+	public String saveState();
+	/**
+	 * 
+	 * @return
+	 */
+	public static CarPark loadState(String xml) {
+		XStream xstream = new XStream();
+		return (CarPark) xstream.fromXML(xml);
+	}
 }

@@ -1,3 +1,5 @@
+import com.thoughtworks.xstream.XStream;
+
 public interface ParkingSlot {
 	/**
 	 * 
@@ -8,7 +10,7 @@ public interface ParkingSlot {
 	 * 
 	 * @return success
 	 */
-	public boolean setId(int i1);
+	public int setId(int i1);
 	/**
 	 * 
 	 * @return
@@ -18,5 +20,16 @@ public interface ParkingSlot {
 	 * 
 	 * @return success
 	 */
-	public boolean setCostumer(Customer us1);
+	public Customer setCostumer(Customer us1);
+	/**
+	 * 
+	 */
+	public String saveState();
+	/**
+	 * @return
+	 */
+	public static ParkingSlot loadState(String xml) {
+		XStream xstream = new XStream();
+		return (ParkingSlot) xstream.fromXML(xml);
+	}
 }
