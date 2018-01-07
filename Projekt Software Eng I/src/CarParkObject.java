@@ -3,8 +3,8 @@ import com.thoughtworks.xstream.XStream;
 public class CarParkObject implements CarPark {
 	private ParkingSlot[] parkingslots;
 	
-	public CarParkObject(ParkingSlot[] ps) {
-		this.parkingslots = ps;
+	public CarParkObject(ParkingSlot[] parkingSlot) {
+		this.parkingslots = parkingSlot;
 	}
 
 	@Override
