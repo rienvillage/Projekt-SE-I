@@ -13,16 +13,6 @@ public interface ParkingSlot {
 	 * 
 	 * @return
 	 */
-	public SlotType getSlotType();
-	/**
-	 * 
-	 * @return success
-	 */
-	public boolean setSlotType(SlotType st1);
-	/**
-	 * 
-	 * @return
-	 */
 	public UnregisteredCustomer getCostumer();
 	/**
 	 * 

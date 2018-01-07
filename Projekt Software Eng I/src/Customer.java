@@ -1,44 +1,33 @@
-
-public interface Customer extends UnregisteredCustomer {
-	/**
-	 * 
-	 * @return
-	 */
-	public String getName();
-	/**
-	 * 
-	 * @return success
-	 */
-	public boolean setName(String s1);
-	/**
-	 * 
-	 * @return
-	 */
-	public String getPassword();
-	/**
-	 * 
-	 * @return success
-	 */
-	public boolean setPassword(String s1);
+public interface Customer {
 	
 	/**
 	 * 
-	 * @return
+	 * @return 
 	 */
-	public ParkingSlot getReservedParkingSlot();
+	public boolean hasPaid();
 	/**
 	 * 
 	 * @return success
 	 */
-	public boolean setReservedParkingSlot(ParkingSlot ps1);
+	public boolean setPaid(boolean b1);
 	/**
 	 * 
 	 * @return
 	 */
-	public VehicleType getVehicleType();
+	public int getArrivalTime();
 	/**
 	 * 
 	 * @return success
 	 */
-	public boolean setVehicleType(VehicleType vt1);
+	public boolean setArrivalTime(int i1);
+	/**
+	 * 
+	 * @return
+	 */
+	public ParkingSlot getCurrentSlot();
+	/**
+	 * 
+	 * @return success
+	 */
+	public boolean setCurrentSlot(ParkingSlot ps1);
 }
