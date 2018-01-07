@@ -59,4 +59,28 @@ public class CarParkObjectTest {
 		
 		assertEquals(cpo.saveState(), s);
 	}
+	@Test
+	public void loadState_01() {
+		String s = "<CarParkObject>\n" + 
+				"  <parkingslots>\n" + 
+				"    <ParkingSlotObject>\n" + 
+				"      <id>0</id>\n" + 
+				"      <customer class=\"CustomerObject\">\n" + 
+				"        <paid>true</paid>\n" + 
+				"        <arrivaltime>123456789</arrivaltime>\n" + 
+				"      </customer>\n" + 
+				"    </ParkingSlotObject>\n" + 
+				"    <ParkingSlotObject>\n" + 
+				"      <id>1</id>\n" + 
+				"    </ParkingSlotObject>\n" + 
+				"    <ParkingSlotObject>\n" + 
+				"      <id>2</id>\n" + 
+				"    </ParkingSlotObject>\n" + 
+				"  </parkingslots>\n" + 
+				"</CarParkObject>";
+		CarPark cp = CarPark.loadState(s);
+		assertEquals(cp.getParkingSlots()[0].getId(), 0);
+		assertEquals(cp.getParkingSlots()[0].getCostumer().hasPaid(), true);
+		assertEquals(cp.getParkingSlots()[0].getCostumer().getArrivalTime(), 123456789);
+	}
 }
