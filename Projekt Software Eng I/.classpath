@@ -7,8 +7,8 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
-	<classpathentry kind="lib" path="C:/Users/Til/Downloads/xmlpull-1.1.3.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Til/Downloads/xpp3_min-1.1.4c.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Til/Downloads/xstream-1.4.10.jar"/>
+	<classpathentry kind="lib" path="xmlpull-1.1.3.1.jar"/>
+	<classpathentry kind="lib" path="xpp3_min-1.1.4c.jar"/>
+	<classpathentry kind="lib" path="xstream-1.4.10.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
