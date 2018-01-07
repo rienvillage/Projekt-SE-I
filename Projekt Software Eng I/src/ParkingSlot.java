@@ -13,10 +13,10 @@ public interface ParkingSlot {
 	 * 
 	 * @return
 	 */
-	public UnregisteredCustomer getCostumer();
+	public Customer getCostumer();
 	/**
 	 * 
 	 * @return success
 	 */
-	public boolean setCostumer(UnregisteredCustomer us1);
+	public boolean setCostumer(Customer us1);
 }
