@@ -51,4 +51,11 @@ public class CarParkObject implements CarPark {
 	public int getOccupiedParkingsSlots() {
 		return this.getTotalParkingSlots() - this.getFreeParkingSlots();
 	}
+	
+	public int findCustomer(Customer c) {
+		for(ParkingSlot ps : this.getParkingSlots()) {
+			if(ps.getCostumer().equals(c)) return ps.getId();
+		}
+		return -1;
+	}
 }

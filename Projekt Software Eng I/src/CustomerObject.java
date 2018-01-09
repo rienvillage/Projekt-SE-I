@@ -3,6 +3,7 @@ import com.thoughtworks.xstream.XStream;
 public class CustomerObject implements Customer {
 	private boolean paid;
 	private long arrivaltime;
+	private long timetotal;
 	
 	public CustomerObject() {
 		this.paid = false;
@@ -36,5 +37,15 @@ public class CustomerObject implements Customer {
 		String xml = xstream.toXML(this);
 		return xml;
 		
+	}
+	@Override
+	public long getTimeTotal() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+	@Override
+	public long setTimeTotal() {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 }

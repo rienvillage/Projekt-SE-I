@@ -1,7 +1,6 @@
 import com.thoughtworks.xstream.XStream;
 
 public interface Customer {
-	
 	/**
 	 * 
 	 * @return 
@@ -12,6 +11,16 @@ public interface Customer {
 	 * @return success
 	 */
 	public boolean setPaid(boolean b1);
+	/**
+	 * 
+	 * @return
+	 */
+	public long getTimeTotal();
+	/**
+	 * 
+	 * @return
+	 */
+	public long setTimeTotal();
 	/**
 	 * 
 	 * @return
