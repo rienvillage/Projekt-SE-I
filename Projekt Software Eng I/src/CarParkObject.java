@@ -24,12 +24,31 @@ public class CarParkObject implements CarPark {
 		String xml = xstream.toXML(this);
 		return xml;
 	}
-
+	
 	@Override
 	public ParkingSlot getFreeParkingSlot() {
 		for(int i = 0; i< this.getParkingSlots().length; i++) {
 			if(this.getParkingSlots()[i].getCostumer() == null) return this.getParkingSlots()[i];
 		}
 		return null;
+	}
+
+	@Override
+	public int getFreeParkingSlots() {
+		int i = 0;
+		for(int j = 0; j < this.getParkingSlots().length; j++) {
+			if(this.getParkingSlots()[j].getCostumer() == null) i++;
+		}
+		return i;
+	}
+
+	@Override
+	public int getTotalParkingSlots() {
+		return this.getParkingSlots().length;
+	}
+
+	@Override
+	public int getOccupiedParkingsSlots() {
+		return this.getTotalParkingSlots() - this.getFreeParkingSlots();
 	}
 }

@@ -3,61 +3,75 @@ import java.awt.event.ActionListener;
 
 public class CarParkController {
 
-	private CarParkView _view;
-	private CarParkObject _model;
+	private CarParkView view;
+	private CarParkObject model;
 	
 	public CarParkController() {
-		this._view = new CarParkView();
-		int parkhausSize = 100;
+		this.view = new CarParkView();
 		
-		ParkingSlot[] parkingslots = new ParkingSlot[parkhausSize];
-		for(int i = 0; i < parkhausSize; i++) {
-			ParkingSlot ps = new ParkingSlotObject(i, null);
-			parkingslots[i] = ps;
-		
-		_model = new CarParkObject(parkingslots);
-		_view.setParkplatzSize("Ein Parkplatz mit "+parkhausSize+" Plätzen wurde erstellt");
-		
-		
+		try {
+			model = (CarParkObject) CarPark.loadState(CarPark.readFromFile("data"));
+			view.setParkplatzSize("Ein Parkplatz mit " + model.getParkingSlots().length + " Plaetzen wurde geladen.");
+		} catch(NullPointerException e) {
+			ParkingSlot[] parkingslots = new ParkingSlot[Config.PH_SIZE];
+			for(int i = 0; i < Config.PH_SIZE; i++) {
+				ParkingSlot ps = new ParkingSlotObject(i, null);
+				parkingslots[i] = ps;
+			
+				model = new CarParkObject(parkingslots);
+				view.setParkplatzSize("Ein Parkplatz mit " + Config.PH_SIZE + " Plaetzen wurde erstellt.");
+			}
 		}
 		
- 
+		view.setFreieParkplaetze("" + model.getFreeParkingSlots());
+		view.setParkplaetze("" + model.getTotalParkingSlots());
+		view.setBelegteParkplaetze("" + model.getOccupiedParkingsSlots());
+		
 		addListener();
 	}
 	
 	public void showView() {
-		this._view.setVisible(true);
+		this.view.setVisible(true);
 	}
 	
-	
-
 	private void addListener() {
-		
-				
-		
-		
-		this._view.setEinfahrtListener(new ActionListener() {
+
+		this.view.setEinfahrtListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				CustomerObject c = new CustomerObject();
-				int slotId =_model.getFreeParkingSlot().getId();
-				_model.getParkingSlots()[slotId].setCostumer(c);
-				_view.setTextField("Ein Neuer Kunde ist eingefahren und hat den Slot "+slotId+" belegt");
+				if(model.getFreeParkingSlots() <= 0) {
+					view.setTextField("Keine freien Parkplaetze verfuegbar.");
+					return;
+				}
 				
+				CustomerObject c = new CustomerObject();
+				int slotId = model.getFreeParkingSlot().getId();
+				model.getParkingSlots()[slotId].setCostumer(c);
+				view.setTextField("Ein Neuer Kunde ist eingefahren und hat den Slot "+ slotId +" belegt");
+				
+				view.setFreieParkplaetze("" + model.getFreeParkingSlots());
+				view.setBelegteParkplaetze("" + model.getOccupiedParkingsSlots());
 			}
 			
 		});
 		
-		this._view.setAusfahrtListener(new ActionListener() {
+		this.view.setAusfahrtListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				
-				
+				view.setFreieParkplaetze("" + model.getFreeParkingSlots());
+				view.setBelegteParkplaetze("" + model.getOccupiedParkingsSlots());
 			}
 			
 		});
-		
+	}
+	
+	public CarPark getCarParkObject() {
+		return this.model;
+	}
+	public CarParkView getCarParkView() {
+		return this.view;
 	}
 }
