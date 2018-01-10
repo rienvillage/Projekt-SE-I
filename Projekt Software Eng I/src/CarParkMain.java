@@ -13,5 +13,21 @@ public class CarParkMain {
         		  CarPark.saveToFile(controller.getCarParkObject().saveState(), "data");
         	  } 	  
         	});
+        
+        Thread updateThread = new Thread("UpdateThread") {
+        		@Override
+        		public void run() {
+        			try {
+        				while(true) {
+        					controller.update();
+        					this.sleep(1000);
+        				}
+        			} catch (InterruptedException e) {
+    					e.printStackTrace();
+    				}
+        		}
+        };
+        
+        updateThread.start();
 	}
 }

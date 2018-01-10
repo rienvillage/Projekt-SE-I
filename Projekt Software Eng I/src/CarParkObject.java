@@ -28,7 +28,7 @@ public class CarParkObject implements CarPark {
 	@Override
 	public ParkingSlot getFreeParkingSlot() {
 		for(int i = 0; i< this.getParkingSlots().length; i++) {
-			if(this.getParkingSlots()[i].getCostumer() == null) return this.getParkingSlots()[i];
+			if(this.getParkingSlots()[i].getCustomer() == null) return this.getParkingSlots()[i];
 		}
 		return null;
 	}
@@ -37,7 +37,7 @@ public class CarParkObject implements CarPark {
 	public int getFreeParkingSlots() {
 		int i = 0;
 		for(int j = 0; j < this.getParkingSlots().length; j++) {
-			if(this.getParkingSlots()[j].getCostumer() == null) i++;
+			if(this.getParkingSlots()[j].getCustomer() == null) i++;
 		}
 		return i;
 	}
@@ -54,8 +54,13 @@ public class CarParkObject implements CarPark {
 	
 	public int findCustomer(Customer c) {
 		for(ParkingSlot ps : this.getParkingSlots()) {
-			if(ps.getCostumer().equals(c)) return ps.getId();
+			if(ps.getCustomer().equals(c)) return ps.getId();
 		}
 		return -1;
+	}
+
+	@Override
+	public ParkingSlot getParkingSlot(int i) {
+		return this.getParkingSlots()[i];
 	}
 }

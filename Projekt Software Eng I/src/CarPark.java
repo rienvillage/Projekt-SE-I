@@ -10,6 +10,12 @@ public interface CarPark {
 	public ParkingSlot getFreeParkingSlot();
 	/**
 	 * 
+	 * @param i
+	 * @return
+	 */
+	public ParkingSlot getParkingSlot(int i);
+	/**
+	 * 
 	 * @return
 	 */
 	public int getFreeParkingSlots();
@@ -103,5 +109,9 @@ public interface CarPark {
 		}
 
 		return (s.equals("")) ? null : s;
+	}
+	public static void delFile(String filename) {
+		java.io.File file = new java.io.File(filename + ".xml");
+		if(file.exists()) file.delete();
 	}
 }

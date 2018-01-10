@@ -22,13 +22,13 @@ public class ParkingSlotObject implements ParkingSlot {
 	}
 
 	@Override
-	public Customer getCostumer() {
+	public Customer getCustomer() {
 		return this.customer;
 	}
 
 	@Override
-	public Customer setCostumer(Customer us1) {
-		Customer cold = this.getCostumer();
+	public Customer setCustomer(Customer us1) {
+		Customer cold = this.getCustomer();
 		this.customer = us1;
 		return cold;
 	}

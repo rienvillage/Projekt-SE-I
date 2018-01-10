@@ -15,12 +15,12 @@ public interface Customer {
 	 * 
 	 * @return
 	 */
-	public long getTimeTotal();
+	public long getTimeSincePaid();
 	/**
 	 * 
 	 * @return
 	 */
-	public long setTimeTotal();
+	public long setTimeSincePaid(long time);
 	/**
 	 * 
 	 * @return

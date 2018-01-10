@@ -22,6 +22,8 @@ public class CarParkView extends JFrame {
 	private JLabel lbl2 = new JLabel("Freie Parkplaetze: -1");
 	private JLabel lbl3 = new JLabel("Parkplaetze: -1");
 	private JLabel lbl4 = new JLabel("Belegte Parkplaetze: -1");
+	
+	private JButton reset = new JButton("Reset");
 
 	//private Object[] Kunden = new ButtonItem[Config.PH_SIZE];
 	private JList jlist1 = null;
@@ -45,7 +47,7 @@ public class CarParkView extends JFrame {
 		this.add(einfahrt);
 		this.add(txtErg);
 
-		
+		this.add(reset);
 	}
 	
 	public void resetView() {
@@ -63,7 +65,11 @@ public class CarParkView extends JFrame {
 	public void setParkplatzErstellen(ActionListener l) {
 		this.parkplatzErstellen.addActionListener(l);
 	}
-
+	
+	public void setReset(ActionListener l) {
+		this.reset.addActionListener(l);
+	}
+	
 	public void setFreieParkplaetze(String str) {
 		this.lbl2.setText("Freie Parkplaetze: " + str);
 	}

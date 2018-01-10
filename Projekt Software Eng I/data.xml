@@ -3,62 +3,98 @@
     <ParkingSlotObject>
       <id>0</id>
       <customer class="CustomerObject">
-        <paid>true</paid>
-        <arrivaltime>1515531364126</arrivaltime>
+        <paid>false</paid>
+        <arrivaltime>1515601716558</arrivaltime>
+        <timepaid>1515601716558</timepaid>
       </customer>
     </ParkingSlotObject>
     <ParkingSlotObject>
       <id>1</id>
       <customer class="CustomerObject">
-        <paid>true</paid>
-        <arrivaltime>1515531519602</arrivaltime>
+        <paid>false</paid>
+        <arrivaltime>1515601633731</arrivaltime>
+        <timepaid>-1</timepaid>
       </customer>
     </ParkingSlotObject>
     <ParkingSlotObject>
       <id>2</id>
+      <customer class="CustomerObject">
+        <paid>false</paid>
+        <arrivaltime>1515601636616</arrivaltime>
+        <timepaid>1515601636616</timepaid>
+      </customer>
     </ParkingSlotObject>
     <ParkingSlotObject>
       <id>3</id>
+      <customer class="CustomerObject">
+        <paid>false</paid>
+        <arrivaltime>1515601633920</arrivaltime>
+        <timepaid>-1</timepaid>
+      </customer>
     </ParkingSlotObject>
     <ParkingSlotObject>
       <id>4</id>
       <customer class="CustomerObject">
-        <paid>true</paid>
-        <arrivaltime>1515531506522</arrivaltime>
+        <paid>false</paid>
+        <arrivaltime>1515601634085</arrivaltime>
+        <timepaid>-1</timepaid>
       </customer>
     </ParkingSlotObject>
     <ParkingSlotObject>
       <id>5</id>
+      <customer class="CustomerObject">
+        <paid>false</paid>
+        <arrivaltime>1515601701287</arrivaltime>
+        <timepaid>1515601701287</timepaid>
+      </customer>
     </ParkingSlotObject>
     <ParkingSlotObject>
       <id>6</id>
       <customer class="CustomerObject">
         <paid>false</paid>
-        <arrivaltime>1515531507544</arrivaltime>
+        <arrivaltime>1515601634430</arrivaltime>
+        <timepaid>-1</timepaid>
       </customer>
     </ParkingSlotObject>
     <ParkingSlotObject>
       <id>7</id>
       <customer class="CustomerObject">
-        <paid>true</paid>
-        <arrivaltime>1515531509052</arrivaltime>
+        <paid>false</paid>
+        <arrivaltime>1515601634595</arrivaltime>
+        <timepaid>-1</timepaid>
       </customer>
     </ParkingSlotObject>
     <ParkingSlotObject>
       <id>8</id>
       <customer class="CustomerObject">
-        <paid>true</paid>
-        <arrivaltime>1515531774527</arrivaltime>
+        <paid>false</paid>
+        <arrivaltime>1515601634761</arrivaltime>
+        <timepaid>-1</timepaid>
       </customer>
     </ParkingSlotObject>
     <ParkingSlotObject>
       <id>9</id>
+      <customer class="CustomerObject">
+        <paid>false</paid>
+        <arrivaltime>1515601634927</arrivaltime>
+        <timepaid>-1</timepaid>
+      </customer>
     </ParkingSlotObject>
     <ParkingSlotObject>
       <id>10</id>
+      <customer class="CustomerObject">
+        <paid>false</paid>
+        <arrivaltime>1515601635108</arrivaltime>
+        <timepaid>-1</timepaid>
+      </customer>
     </ParkingSlotObject>
     <ParkingSlotObject>
       <id>11</id>
+      <customer class="CustomerObject">
+        <paid>false</paid>
+        <arrivaltime>1515601635255</arrivaltime>
+        <timepaid>-1</timepaid>
+      </customer>
     </ParkingSlotObject>
     <ParkingSlotObject>
       <id>12</id>

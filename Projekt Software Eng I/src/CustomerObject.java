@@ -3,11 +3,12 @@ import com.thoughtworks.xstream.XStream;
 public class CustomerObject implements Customer {
 	private boolean paid;
 	private long arrivaltime;
-	private long timetotal;
+	private long timepaid;
 	
 	public CustomerObject() {
 		this.paid = false;
 		this.arrivaltime = System.currentTimeMillis();
+		this.timepaid = -1;
 	}
 	@Override
 	public boolean hasPaid() {
@@ -39,13 +40,13 @@ public class CustomerObject implements Customer {
 		
 	}
 	@Override
-	public long getTimeTotal() {
-		// TODO Auto-generated method stub
-		return 0;
+	public long getTimeSincePaid() {
+		return this.timepaid;
 	}
 	@Override
-	public long setTimeTotal() {
-		// TODO Auto-generated method stub
-		return 0;
+	public long setTimeSincePaid(long time) {
+		long l = this.timepaid;
+		this.timepaid = time;
+		return l;
 	}
 }

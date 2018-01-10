@@ -6,7 +6,6 @@ import java.util.concurrent.TimeUnit;
 import javax.swing.AbstractAction;
 import javax.swing.Action;
 import javax.swing.JTable;
-import javax.swing.table.DefaultTableModel;
 
 public class CarParkController {
 
@@ -18,7 +17,7 @@ public class CarParkController {
 		
 		try {
 			model = (CarParkObject) CarPark.loadState(CarPark.readFromFile("data"));
-			view.setParkplatzSize("Ein Parkplatz mit " + model.getParkingSlots().length + " Plaetzen wurde geladen.");
+			view.setParkplatzSize("Ein Parkhaus mit " + model.getParkingSlots().length + " Plaetzen wurde geladen.");
 		} catch(NullPointerException e) {
 			ParkingSlot[] parkingslots = new ParkingSlot[Config.PH_SIZE];
 			for(int i = 0; i < Config.PH_SIZE; i++) {
@@ -26,7 +25,7 @@ public class CarParkController {
 				parkingslots[i] = ps;
 			
 				model = new CarParkObject(parkingslots);
-				view.setParkplatzSize("Ein Parkplatz mit " + Config.PH_SIZE + " Plaetzen wurde erstellt.");
+				view.setParkplatzSize("Ein Parkhaus mit " + Config.PH_SIZE + " Plaetzen wurde erstellt.");
 			}
 		}
 		
@@ -49,7 +48,6 @@ public class CarParkController {
 	private void addListener() {
 
 		this.view.setEinfahrtListener(new ActionListener() {
-
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				if(model.getFreeParkingSlots() <= 0) {
@@ -59,13 +57,23 @@ public class CarParkController {
 				
 				CustomerObject c = new CustomerObject();
 				int slotId = model.getFreeParkingSlot().getId();
-				model.getParkingSlots()[slotId].setCostumer(c);
+				model.getParkingSlots()[slotId].setCustomer(c);
 				
-				view.setTextField("Ein Neuer Kunde ist eingefahren und hat den Slot "+ slotId +" belegt");
+				view.setTextField("Ein Neuer Kunde ist eingefahren und hat den Slot "+ slotId +" belegt.");
 				
 				update();		
 			}
 			
+		});
+		
+		this.view.setReset(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				CarPark.delFile("data");
+				for(int i = 0; i < Config.PH_SIZE; i++) model.getParkingSlot(i).setCustomer(null);
+				view.setTextField("Das Parkhaus wurde resettet.");
+				update();
+			}
 		});
 	}
 	
@@ -75,18 +83,23 @@ public class CarParkController {
 	public CarParkView getCarParkView() {
 		return this.view;
 	}
-	private void update() {
+	protected void update() {
 		for(int i = 0; i < Config.PH_SIZE; i++) {
 			ParkingSlot ps = model.getParkingSlots()[i];
-			if(ps.getCostumer() == null) {
+			if(ps.getCustomer() == null) {
 				table.setValueAt("frei", i, 0);
 				table.setValueAt("-", i, 1);
 				table.setValueAt("false", i, 2);
 				continue;
 			} else {
+				if(ps.getCustomer().hasPaid() && (System.currentTimeMillis() - ps.getCustomer().getTimeSincePaid()) > Config.TIME_TO_LEAVE) {
+					ps.getCustomer().setArrivalTime(ps.getCustomer().getTimeSincePaid());
+					ps.getCustomer().setPaid(false);
+				}
+				
 				table.setValueAt(i, i, 0);
-				table.setValueAt(this.calcTimeString(System.currentTimeMillis() - ps.getCostumer().getArrivalTime()), i, 1);
-				table.setValueAt(ps.getCostumer().hasPaid(), i, 2);
+				table.setValueAt(this.calcTimeString(System.currentTimeMillis() - ps.getCustomer().getArrivalTime()), i, 1);
+				table.setValueAt(ps.getCustomer().hasPaid(), i, 2);
 			}
 		}
 		
@@ -118,17 +131,27 @@ public class CarParkController {
 	public Action getTableAction() {
 		return new AbstractAction()
 		{
-		    public void actionPerformed(ActionEvent e)
+		    /**
+			 * 
+			 */
+			private static final long serialVersionUID = 1L;
+
+			public void actionPerformed(ActionEvent e)
 		    {
-		        JTable table = (JTable)e.getSource();
 		        int modelRow = Integer.valueOf(e.getActionCommand());
-		        
-		        if(model.getParkingSlots()[modelRow].getCostumer() != null) {
-		        		if(model.getParkingSlots()[modelRow].getCostumer().hasPaid()) {
-		        			model.getParkingSlots()[modelRow].setCostumer(null);
+		        ParkingSlot ps = model.getParkingSlot(modelRow);
+		        Customer cc = ps.getCustomer();
+		        if(cc != null) {
+		        		if(cc.hasPaid() && (System.currentTimeMillis() - cc.getTimeSincePaid()) > Config.TIME_TO_LEAVE) {
+		        			cc.setArrivalTime(cc.getTimeSincePaid());
+		        			cc.setPaid(false);
+		        			update();
+		        		} else if(cc.hasPaid()) {
+		        			ps.setCustomer(null);
 		        			update();
 		        		} else {
-		        			model.getParkingSlots()[modelRow].getCostumer().setPaid(true);
+		        			cc.setPaid(true);
+		        			cc.setTimeSincePaid(System.currentTimeMillis());
 		        			update();
 		        		}
 		        }

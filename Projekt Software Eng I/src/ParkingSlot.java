@@ -15,12 +15,12 @@ public interface ParkingSlot {
 	 * 
 	 * @return
 	 */
-	public Customer getCostumer();
+	public Customer getCustomer();
 	/**
 	 * 
 	 * @return success
 	 */
-	public Customer setCostumer(Customer us1);
+	public Customer setCustomer(Customer us1);
 	/**
 	 * 
 	 */
