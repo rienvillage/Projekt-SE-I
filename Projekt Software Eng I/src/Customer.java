@@ -35,6 +35,17 @@ public interface Customer {
 	 * 
 	 * @return
 	 */
+	public VehicleType getVehicleType();
+	/**
+	 * 
+	 * @param vt
+	 * @return
+	 */
+	public VehicleType setVehicleType(VehicleType vt);
+	/**
+	 * 
+	 * @return
+	 */
 	public String saveState();
 	/**
 	 * 

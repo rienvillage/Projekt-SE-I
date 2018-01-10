@@ -4,12 +4,21 @@ public class CustomerObject implements Customer {
 	private boolean paid;
 	private long arrivaltime;
 	private long timepaid;
+	private VehicleType vt;
 	
 	public CustomerObject() {
 		this.paid = false;
 		this.arrivaltime = System.currentTimeMillis();
 		this.timepaid = -1;
+		this.vt = VehicleType.getInstance("PKW");
 	}
+	public CustomerObject(VehicleType vt) {
+		this.paid = false;
+		this.arrivaltime = System.currentTimeMillis();
+		this.timepaid = -1;
+		this.vt = vt;
+	}
+	
 	@Override
 	public boolean hasPaid() {
 		return this.paid;
@@ -48,5 +57,15 @@ public class CustomerObject implements Customer {
 		long l = this.timepaid;
 		this.timepaid = time;
 		return l;
+	}
+	@Override
+	public VehicleType getVehicleType() {
+		return this.vt;
+	}
+	@Override
+	public VehicleType setVehicleType(VehicleType vt) {
+		VehicleType old = this.getVehicleType();
+		this.vt = vt;
+		return old;
 	}
 }

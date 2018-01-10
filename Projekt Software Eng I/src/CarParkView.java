@@ -1,19 +1,15 @@
-import java.awt.Color;
-import java.awt.Component;
 import java.awt.FlowLayout;
-import java.awt.Point;
-import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.KeyEvent;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 
 public class CarParkView extends JFrame {
 
-	private static int cid = 0;
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
 	private JButton parkplatzErstellen = new JButton("Parkhaus erstellen");
 	private JButton einfahrt = new JButton("Einfahrt");
@@ -24,29 +20,40 @@ public class CarParkView extends JFrame {
 	private JLabel lbl4 = new JLabel("Belegte Parkplaetze: -1");
 	
 	private JButton reset = new JButton("Reset");
+	private JComboBox<String> box = null;
 
 	//private Object[] Kunden = new ButtonItem[Config.PH_SIZE];
-	private JList jlist1 = null;
+
 	private JScrollPane jsp = new JScrollPane();
+	
+	private JTextArea jta = null;
 
 	public CarParkView() {
 		super("Parkhaus");
 		initForm();
 	}
 
-	@SuppressWarnings("unchecked")
 	private void initForm() {
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setLayout(new FlowLayout());
-		this.setBounds(200, 100, 500, 600);
-
+		this.setBounds(200, 100, 550, 600);		
+	}
+	
+	public void addParkLabels() {
 		this.add(lbl3);
 		this.add(lbl2);
 		this.add(lbl4);
-
+	}
+	
+	public void addEinfahrtButton() {
 		this.add(einfahrt);
+	}
+	
+	public void addConsoleText() {
 		this.add(txtErg);
-
+	}
+	
+	public void addResetButton() {
 		this.add(reset);
 	}
 	
@@ -83,15 +90,16 @@ public class CarParkView extends JFrame {
 	}
 
 	public JTable addTable() {
-		String[] columnNames = {"Kunde auf Parkplatz", "Einfahrzeit", "Bezahlt", "Ausfahren / Bezahlen"};
+		String[] columnNames = {"Parkplatz", "Fahrzeugtyp", "Einfahrzeit", "Bezahlt", "Ausfahren / Bezahlen"};
 		
-		String[][] Kunden = new String[Config.PH_SIZE][4];
+		String[][] Kunden = new String[Config.PH_SIZE][5];
 	
-		for(int i = 0; i < Kunden.length; i++) {
+		for(int i = 0; i < Config.PH_SIZE; i++) {
 			Kunden[i][0] = "frei";
 			Kunden[i][1] = "-";
-			Kunden[i][2] = "false";
-			Kunden[i][3] = "Ausfahrt";
+			Kunden[i][2] = "-";
+			Kunden[i][3] = "false";
+			Kunden[i][4] = "Ausfahrt";
 		}
 		
 		DefaultTableModel model = new DefaultTableModel(Kunden, columnNames);
@@ -103,11 +111,30 @@ public class CarParkView extends JFrame {
 		
 		return table;
 	}
+	
+	public JTextArea addTextArea() {
+		this.jta = new JTextArea();
+		
+		jta.setEditable(false);
+		this.add(jta);
+		
+		return jta;
+	}
+	
+	public JComboBox<String> addComboBox() {
+		String[] vtype = {"PKW", "Pickup", "SUV", "Zweirad", "Trike", "Quad"};
+		
+		this.box = new JComboBox<String>(vtype);
+		this.add(box);
+		
+		return this.box;
+	}
+	
 	public void setEinfahrtListener(ActionListener l) {
 		this.einfahrt.addActionListener(l);
 	}
+	
 	public void setAusfahrtListener(ActionListener l) {
 		
 	}
-
 }

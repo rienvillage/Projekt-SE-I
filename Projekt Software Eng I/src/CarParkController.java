@@ -5,13 +5,18 @@ import java.util.concurrent.TimeUnit;
 
 import javax.swing.AbstractAction;
 import javax.swing.Action;
+import javax.swing.JComboBox;
 import javax.swing.JTable;
+import javax.swing.JTextArea;
 
 public class CarParkController {
 
 	private CarParkView view;
 	private CarParkObject model;
 	private JTable table;
+	private JTextArea textArea;
+	private JComboBox<String> box;
+	
 	public CarParkController() {
 		this.view = new CarParkView();
 		
@@ -29,9 +34,18 @@ public class CarParkController {
 			}
 		}
 		
-		table = view.addTable();
+		view.addParkLabels();
+		view.addConsoleText();
+		view.addEinfahrtButton();
 		
-		ButtonColumn buttonColumn = new ButtonColumn(table, this.getTableAction(), 3);
+		box = view.addComboBox();
+		
+		table = view.addTable();
+		textArea = view.addTextArea();
+		
+		view.addResetButton();
+		
+		ButtonColumn buttonColumn = new ButtonColumn(table, this.getTableAction(), 4);
 		buttonColumn.setMnemonic(KeyEvent.VK_D);
 		
 		//this.initTable();
@@ -55,11 +69,12 @@ public class CarParkController {
 					return;
 				}
 				
-				CustomerObject c = new CustomerObject();
+				Customer c = new CustomerObject(VehicleType.getInstance((String) box.getSelectedItem()));
+				
 				int slotId = model.getFreeParkingSlot().getId();
 				model.getParkingSlots()[slotId].setCustomer(c);
 				
-				view.setTextField("Ein Neuer Kunde ist eingefahren und hat den Slot "+ slotId +" belegt.");
+				view.setTextField("Ein " + box.getSelectedItem() + " hat Parkplatz " + slotId + " belegt.");
 				
 				update();		
 			}
@@ -89,6 +104,7 @@ public class CarParkController {
 			if(ps.getCustomer() == null) {
 				table.setValueAt("frei", i, 0);
 				table.setValueAt("-", i, 1);
+				table.setValueAt("-", i, 2);
 				table.setValueAt("false", i, 2);
 				continue;
 			} else {
@@ -98,8 +114,9 @@ public class CarParkController {
 				}
 				
 				table.setValueAt(i, i, 0);
-				table.setValueAt(this.calcTimeString(System.currentTimeMillis() - ps.getCustomer().getArrivalTime()), i, 1);
-				table.setValueAt(ps.getCustomer().hasPaid(), i, 2);
+				table.setValueAt(ps.getCustomer().getVehicleType().getName(), i, 1);
+				table.setValueAt(this.calcTimeString(System.currentTimeMillis() - ps.getCustomer().getArrivalTime()), i, 2);
+				table.setValueAt(ps.getCustomer().hasPaid(), i, 3);
 			}
 		}
 		
@@ -146,10 +163,12 @@ public class CarParkController {
 		        			cc.setArrivalTime(cc.getTimeSincePaid());
 		        			cc.setPaid(false);
 		        			update();
-		        		} else if(cc.hasPaid()) {
+		        		} else if(cc.hasPaid()) {   			
 		        			ps.setCustomer(null);
 		        			update();
 		        		} else {
+		        			String msg = textArea.getText();
+		        			
 		        			cc.setPaid(true);
 		        			cc.setTimeSincePaid(System.currentTimeMillis());
 		        			update();
