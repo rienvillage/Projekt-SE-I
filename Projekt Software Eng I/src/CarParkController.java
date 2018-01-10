@@ -168,6 +168,16 @@ public class CarParkController {
 		        			update();
 		        		} else {
 		        			String msg = textArea.getText();
+		        			float price = cc.getVehicleType().getPrice();
+		        			int ap = Config.ACCOUTING_PERIOD;
+		        			long tt = System.currentTimeMillis() - cc.getArrivalTime();
+		        			int ts = (int) ((tt / ap) + 1);
+		        			
+		        			int made1 = (int) (ts * price * 100);
+		        			float made2 = made1 / 100;
+		        			msg += "Ein " + cc.getVehicleType().getName() + " hat " + made2 + "€ bezahlt.\n";
+		        			
+		        			textArea.setText(msg);
 		        			
 		        			cc.setPaid(true);
 		        			cc.setTimeSincePaid(System.currentTimeMillis());

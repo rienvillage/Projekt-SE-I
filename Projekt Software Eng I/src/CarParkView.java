@@ -1,3 +1,4 @@
+import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.event.ActionListener;
 
@@ -24,7 +25,8 @@ public class CarParkView extends JFrame {
 
 	//private Object[] Kunden = new ButtonItem[Config.PH_SIZE];
 
-	private JScrollPane jsp = new JScrollPane();
+	private JScrollPane jsp;
+	private JScrollPane jsp2;
 	
 	private JTextArea jta = null;
 
@@ -105,7 +107,7 @@ public class CarParkView extends JFrame {
 		DefaultTableModel model = new DefaultTableModel(Kunden, columnNames);
 		JTable table = new JTable( model );
 		
-		jsp.setViewportView(table);
+		jsp = new JScrollPane(table);
 		
 		this.add(jsp);
 		
@@ -113,10 +115,12 @@ public class CarParkView extends JFrame {
 	}
 	
 	public JTextArea addTextArea() {
-		this.jta = new JTextArea();
+		this.jta = new JTextArea(5, 15);
 		
 		jta.setEditable(false);
-		this.add(jta);
+		
+		jsp2 = new JScrollPane(jta);
+		this.add(jsp2);
 		
 		return jta;
 	}
