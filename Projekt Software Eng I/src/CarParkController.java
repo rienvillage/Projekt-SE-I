@@ -89,6 +89,7 @@ public class CarParkController {
 				CarPark.delFile("data");
 				for(int i = 0; i < Config.PH_SIZE; i++) model.getParkingSlot(i).setCustomer(null);
 				view.setTextField("Das Parkhaus wurde resettet.");
+				model.setTotalProfit(0);
 				update();
 			}
 		});
