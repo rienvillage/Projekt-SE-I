@@ -19,6 +19,7 @@ public class CarParkView extends JFrame {
 	private JLabel lbl2 = new JLabel("Freie Parkplaetze: -1");
 	private JLabel lbl3 = new JLabel("Parkplaetze: -1");
 	private JLabel lbl4 = new JLabel("Belegte Parkplaetze: -1");
+	private JLabel lbl5 = new JLabel("Umsatz Gesamt: -1 €");
 	
 	private JButton reset = new JButton("Reset");
 	private JComboBox<String> box = null;
@@ -58,7 +59,9 @@ public class CarParkView extends JFrame {
 	public void addResetButton() {
 		this.add(reset);
 	}
-	
+	public void addUmsatzLabel() {
+		this.add(lbl5);
+	}
 	public void resetView() {
 		this.txtErg.setText("");
 	}
@@ -90,7 +93,9 @@ public class CarParkView extends JFrame {
 	public void setBelegteParkplaetze(String str) {
 		this.lbl4.setText("Belegte Parkplaetze: " + str);
 	}
-
+	public void setUmsatz(String str) {
+		this.lbl5.setText("Umsatz Gesamt: " + str + " €");
+	}
 	public JTable addTable() {
 		String[] columnNames = {"Parkplatz", "Fahrzeugtyp", "Einfahrzeit", "Bezahlt", "Ausfahren / Bezahlen"};
 		

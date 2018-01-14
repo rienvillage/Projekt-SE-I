@@ -4,8 +4,8 @@
       <id>0</id>
       <customer class="CustomerObject">
         <paid>false</paid>
-        <arrivaltime>1515614509497</arrivaltime>
-        <timepaid>1515614509497</timepaid>
+        <arrivaltime>1515748171131</arrivaltime>
+        <timepaid>1515748171131</timepaid>
         <vt>
           <map/>
           <breite>5.0</breite>
@@ -19,25 +19,19 @@
       <id>1</id>
       <customer class="CustomerObject">
         <paid>false</paid>
-        <arrivaltime>1515614506001</arrivaltime>
-        <timepaid>1515614506001</timepaid>
-        <vt reference="../../../ParkingSlotObject/customer/vt"/>
+        <arrivaltime>1515748182456</arrivaltime>
+        <timepaid>-1</timepaid>
+        <vt>
+          <map/>
+          <breite>5.0</breite>
+          <laenge>2.5</laenge>
+          <price>2.8</price>
+          <name>SUV</name>
+        </vt>
       </customer>
     </ParkingSlotObject>
     <ParkingSlotObject>
       <id>2</id>
-      <customer class="CustomerObject">
-        <paid>false</paid>
-        <arrivaltime>1515614515786</arrivaltime>
-        <timepaid>1515614515786</timepaid>
-        <vt>
-          <map/>
-          <breite>3.0</breite>
-          <laenge>2.2</laenge>
-          <price>2.0</price>
-          <name>Quad</name>
-        </vt>
-      </customer>
     </ParkingSlotObject>
     <ParkingSlotObject>
       <id>3</id>
@@ -72,7 +66,13 @@
         <paid>false</paid>
         <arrivaltime>1515614514332</arrivaltime>
         <timepaid>1515614514332</timepaid>
-        <vt reference="../../../ParkingSlotObject[3]/customer/vt"/>
+        <vt>
+          <map/>
+          <breite>3.0</breite>
+          <laenge>2.2</laenge>
+          <price>2.0</price>
+          <name>Quad</name>
+        </vt>
       </customer>
     </ParkingSlotObject>
     <ParkingSlotObject>
@@ -146,10 +146,13 @@
     </ParkingSlotObject>
     <ParkingSlotObject>
       <id>14</id>
+    </ParkingSlotObject>
+    <ParkingSlotObject>
+      <id>15</id>
       <customer class="CustomerObject">
         <paid>false</paid>
-        <arrivaltime>1515614432614</arrivaltime>
-        <timepaid>-1</timepaid>
+        <arrivaltime>1515965137158</arrivaltime>
+        <timepaid>1515965137158</timepaid>
         <vt>
           <map/>
           <breite>5.0</breite>
@@ -160,28 +163,7 @@
       </customer>
     </ParkingSlotObject>
     <ParkingSlotObject>
-      <id>15</id>
-      <customer class="CustomerObject">
-        <paid>false</paid>
-        <arrivaltime>1515614432782</arrivaltime>
-        <timepaid>-1</timepaid>
-        <vt reference="../../../ParkingSlotObject[15]/customer/vt"/>
-      </customer>
-    </ParkingSlotObject>
-    <ParkingSlotObject>
       <id>16</id>
-      <customer class="CustomerObject">
-        <paid>false</paid>
-        <arrivaltime>1515614520760</arrivaltime>
-        <timepaid>-1</timepaid>
-        <vt>
-          <map/>
-          <breite>3.0</breite>
-          <laenge>2.0</laenge>
-          <price>1.6</price>
-          <name>Trike</name>
-        </vt>
-      </customer>
     </ParkingSlotObject>
     <ParkingSlotObject>
       <id>17</id>
@@ -189,7 +171,7 @@
         <paid>false</paid>
         <arrivaltime>1515614433112</arrivaltime>
         <timepaid>-1</timepaid>
-        <vt reference="../../../ParkingSlotObject[15]/customer/vt"/>
+        <vt reference="../../../ParkingSlotObject[16]/customer/vt"/>
       </customer>
     </ParkingSlotObject>
     <ParkingSlotObject>
@@ -198,7 +180,13 @@
         <paid>false</paid>
         <arrivaltime>1515614462392</arrivaltime>
         <timepaid>-1</timepaid>
-        <vt reference="../../../ParkingSlotObject[17]/customer/vt"/>
+        <vt>
+          <map/>
+          <breite>3.0</breite>
+          <laenge>2.0</laenge>
+          <price>1.6</price>
+          <name>Trike</name>
+        </vt>
       </customer>
     </ParkingSlotObject>
     <ParkingSlotObject>
@@ -222,7 +210,7 @@
         <paid>false</paid>
         <arrivaltime>1515614510043</arrivaltime>
         <timepaid>1515614510043</timepaid>
-        <vt reference="../../../ParkingSlotObject[15]/customer/vt"/>
+        <vt reference="../../../ParkingSlotObject[16]/customer/vt"/>
       </customer>
     </ParkingSlotObject>
     <ParkingSlotObject>
@@ -231,7 +219,7 @@
         <paid>false</paid>
         <arrivaltime>1515614433769</arrivaltime>
         <timepaid>-1</timepaid>
-        <vt reference="../../../ParkingSlotObject[15]/customer/vt"/>
+        <vt reference="../../../ParkingSlotObject[16]/customer/vt"/>
       </customer>
     </ParkingSlotObject>
     <ParkingSlotObject>
@@ -249,17 +237,12 @@
         <paid>false</paid>
         <arrivaltime>1515614511134</arrivaltime>
         <timepaid>1515614511134</timepaid>
-        <vt reference="../../../ParkingSlotObject[15]/customer/vt"/>
+        <vt reference="../../../ParkingSlotObject[16]/customer/vt"/>
       </customer>
     </ParkingSlotObject>
     <ParkingSlotObject>
       <id>24</id>
-      <customer class="CustomerObject">
-        <paid>false</paid>
-        <arrivaltime>1515614465693</arrivaltime>
-        <timepaid>-1</timepaid>
-        <vt reference="../../../ParkingSlotObject[20]/customer/vt"/>
-      </customer>
     </ParkingSlotObject>
   </parkingslots>
+  <totalprofit>39750.0</totalprofit>
 </CarParkObject>

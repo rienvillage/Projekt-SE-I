@@ -50,6 +50,8 @@ public class CarParkController {
 		
 		//this.initTable();
 		
+		view.addUmsatzLabel();
+		
 		addListener();
 		
 		update();
@@ -124,6 +126,7 @@ public class CarParkController {
 		view.setParkplaetze("" + model.getTotalParkingSlots());
 		view.setBelegteParkplaetze("" + model.getOccupiedParkingsSlots());
 		
+		view.setUmsatz("" + model.getTotalProfit());
 	}
 	private String calcTimeString(long millis) {
 	    if(millis < 0) return null;
@@ -177,6 +180,7 @@ public class CarParkController {
 		        			float made2 = made1 / 100;
 		        			msg += "Ein " + cc.getVehicleType().getName() + " hat " + made2 + "€ bezahlt.\n";
 		        			
+		        			model.addTotalProfit(made2);
 		        			textArea.setText(msg);
 		        			
 		        			cc.setPaid(true);

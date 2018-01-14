@@ -41,6 +41,22 @@ public interface CarPark {
 	public ParkingSlot[] setParkingSlots(ParkingSlot[] ps1);
 	/**
 	 * 
+	 * @param f1
+	 */
+	public void addTotalProfit(float f1);
+	/**
+	 * 
+	 * @return
+	 */
+	public float getTotalProfit();
+	/**
+	 * 
+	 * @param f1
+	 * @return
+	 */
+	public float setTotalProfit(float f1);
+	/**
+	 * 
 	 * @return
 	 */
 	public String saveState();

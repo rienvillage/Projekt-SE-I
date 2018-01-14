@@ -2,9 +2,11 @@ import com.thoughtworks.xstream.XStream;
 
 public class CarParkObject implements CarPark {
 	private ParkingSlot[] parkingslots;
+	private float totalprofit;
 	
 	public CarParkObject(ParkingSlot[] parkingSlot) {
 		this.parkingslots = parkingSlot;
+		this.totalprofit = 0;
 	}
 
 	@Override
@@ -62,5 +64,22 @@ public class CarParkObject implements CarPark {
 	@Override
 	public ParkingSlot getParkingSlot(int i) {
 		return this.getParkingSlots()[i];
+	}
+
+	@Override
+	public void addTotalProfit(float f1) {
+		this.setTotalProfit(this.getTotalProfit() + f1);
+	}
+
+	@Override
+	public float getTotalProfit() {
+		return this.totalprofit;
+	}
+
+	@Override
+	public float setTotalProfit(float f1) {
+		float old = this.getTotalProfit();
+		this.totalprofit = f1;
+		return old;
 	}
 }
